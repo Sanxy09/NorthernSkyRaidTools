@@ -1194,7 +1194,7 @@ transitionEnd
 다음의 스크린샷 기준 1조는 주황색으로 표시된 3개 지점, 2조는 보라색으로 표시된 지점, 3조는 빨간색으로 표시된 지점의 바닥을 맞습니다.
 패턴 중 하나는 모든 바닥 맞기 배정이 반시계 방향으로 1칸씩 이동합니다.]=]
 L["Copy Group Assignment Image Link"] = "특임조 배정 이미지 링크 복사"
-L["Creates the three chat macros used to select Ula'tek's transition pattern."] = "Creates the three chat macros used to select Ula'tek's transition pattern."
+L["Creates the three chat macros used to select Ula'tek's transition pattern."] = "채팅 매크로를 3개 생성해서 울라텍 사이페 패턴 선택에 사용합니다."
 L["Creates one raid macro for each wave direction and updates them if they already exist."] = "파도 방향별로 공격대 매크로가 하나씩 생성되고 이미 있을 경우엔 업데이트됩니다."
 L["Will automatically create the correct macros for the memory game. You will only see the correct icons if you downloaded the texture files"] = "메모리 게임에 쓸 매크로를 자동으로 생성합니다. 텍스처 파일을 다운로드 받아야 아이콘이 제대로 나옵니다"
 L["FontSize"] = "글꼴 크기"
@@ -1276,7 +1276,8 @@ L["|cFF00FFFFNSRT:|r no preview available for this Alert. It displays a line fro
 L["|cFF00FFFFNSRT:|r no preview available for this Alert. It is displayed on the add nameplates during phases 2 and 3."] = "|cFF00FFFFNSRT:|r 이 경고는 미리보기가 없습니다. 2페와 3페 동안 쫄 이름표에 표시됩니다."
 L["|cFF00FFFFNSRT:|r the live display is shown on add nameplates during phases 2 and 3. This static preview is only provided for editing the box size and display settings."] = "|cFF00FFFFNSRT:|r 2, 3페이즈 동안 쫄 이름표에 실시간 디스플레이가 표시됩니다. 이 고정된 미리보기는 박스 크기와 표시 설정을 수정할 때만 제공됩니다."
 L["Show the assignment boxes for both interrupt lines."] = "두 차단 라인의 담당자 박스를 표시합니다."
-L["The first interrupt line will be assigned to the add with no raidmarker. The second interrupt line will be assigned to the add with any raidmarker. The usual strat is that you have one person instantly putting a raidmarker on the ranged add. That way only one of the boxes should show up and count up correctly."] = "첫 번째 차단 라인은 징표가 없는 쫄에 지정됩니다. 두 번째 차단 라인은 징표가 찍힌 쫄에 지정됩니다. 일반적인 공략은 원거리 쫄에 한 명이 바로 징표를 찍는 방식입니다. 이렇게 해야 박스가 하나만 표시되며 카운트가 정상적으로 올라갑니다."
+L["The first interrupt line will be assigned to the add with no raidmarker. The second interrupt line will be assigned to the add with any raidmarker. The usual strat is that you have one person instantly putting a raidmarker on the ranged add. That way only one of the boxes should show up and count up correctly."] = "1번 차단 라인은 징표가 없는 쫄에 지정됩니다. 2번 차단 라인은 징표가 찍힌 쫄에 지정됩니다. 일반적인 공략은 원거리 쫄에 한 명이 바로 징표를 찍는 방식입니다. 이렇게 해야 박스가 하나만 표시되며 카운트가 정상적으로 올라갑니다."
+L["The first interrupt line will be assigned to the add with no raidmarker. The second interrupt line will be assigned to the add with any raidmarker. The usual strat is that you have one person instantly putting a raidmarker on the ranged add so the correct box shows and counts up.\n\nOptionally, add two more lines for separate P3 assignments, or four more lines for separate assignments for the first and second P3 add waves. Each pair follows the same order: unmarked add first, marked add second."] = "1번 차단 라인은 징표가 없는 쫄에 지정됩니다. 2번 차단 라인은 징표가 찍힌 쫄에 지정됩니다. 일반적인 공략은 원거리 쫄에 한 명이 바로 징표를 찍으면 올바른 박스가 나오고 차단 카운트가 올라가는 식입니다.\n\n다른 방법으로는 라인 2개를 추가해서 3페 차단을 분리하는 것과 라인 4개를 추가해서 3페 쫄 웨이브때 1번 2번을 나누는 것이 있습니다. 각 세트는 같은 순서를 따릅니다: 징표 없는 쫄이 1번, 징표 쫄이 2번입니다."
 L["Display settings are fixed\nfor this alert."] = "이 경고의 디스플레이 설정은\n바꿀 수 없습니다."
 -- Assignment
 L["|cFF00FF00SOAK"] = "|cFF00FF00스킬 맞기"
