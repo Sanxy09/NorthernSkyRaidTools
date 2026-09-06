@@ -831,8 +831,8 @@ For one of the patterns all assigned soaks are shifted counter-clockwise by 1]]
             label:SetSize(width, height)
             return label, height
         end},
-        {Type = "Link", label = NSI:Loc("Copy Group Assignment Image Link"), url = "https://i.imgur.com/hTLmIYt.png", width = 250,
-            tooltip = {title = NSI:Loc("Copy Group Assignment Image Link"), desc = "https://i.imgur.com/hTLmIYt.png"}},
+        {Type = "Link", label = NSI:Loc("Copy Group Assignment Image Link"), url = "https://i.imgur.com/kHYHnkv.png", width = 250,
+            tooltip = {title = NSI:Loc("Copy Group Assignment Image Link"), desc = "https://i.imgur.com/kHYHnkv.png"}},
         {Type = "Button", label = NSI:Loc("Create Macros"), width = 180,
             func = [[return function(NSI)
                 local macros = {
