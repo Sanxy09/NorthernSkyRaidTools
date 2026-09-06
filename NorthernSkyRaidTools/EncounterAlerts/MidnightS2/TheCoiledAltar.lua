@@ -629,7 +629,7 @@ function NSI:UpdateCoiledAltarInterruptDisplay()
     local alert = self.CoiledAltarInterruptAlert
     local interrupts = self.Interrupts
     local assignmentTable = interrupts and interrupts.assignTable
-    local phaseAllowed = self.Phase == 2 or self.Phase == 3
+    local phaseAllowed = self.Phase == 2 or self.Phase == 2.5 or self.Phase == 3
     local alertLoad = alert and self:EvaluateLoad(alert)
     local active = self.CoiledAltarInterruptActive and self.CoiledAltarInterruptBoss3Available ~= false and phaseAllowed and alert and alert.enabled and alertLoad
     if not active or not assignmentTable or not assignmentTable[2] or not assignmentTable[3] then
@@ -1181,7 +1181,6 @@ NSI.EncounterAlertStart[encID] = function(self, id) -- on ENCOUNTER_START
         self.Phase = 2.5
         self:StartReminders(self.Phase)
         self.PhaseSwapTime = GetTime()
-        SetCoiledAltarInterruptPhase(self, false)
         self:UpdateCoiledAltarDebuffCircle()
         local alert = self.CoiledAltarWrongTargetAlert
         if alert and alert.enabled and self:EvaluateLoad(alert) then
