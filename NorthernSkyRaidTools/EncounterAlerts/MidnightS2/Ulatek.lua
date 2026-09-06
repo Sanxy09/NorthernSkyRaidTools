@@ -1157,7 +1157,7 @@ NSI.EncounterAlertStart[encID] = function(self, id, isPreview)
             TTS = false,
             IsAlert = false,
             ReloeReminder = true,
-        })
+        }, true)
         self.UlatekWrongTargetFrame = info and self:DisplayReminder(info)
     end
 
