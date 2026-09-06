@@ -1055,8 +1055,8 @@ NSI.EncounterAlertStart[encID] = function(self, id, isPreview)
         self.UlatekInterruptFocusedBossUnit = nil
         self.UlatekInterruptTrackingEnabled = false
         self:EncounterRegister("UlatekInterruptFocus", "PLAYER_FOCUS_CHANGED", true)
-        self:EncounterRegister("UlatekInterruptFocus", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_STOP"}, true, "focus")
-        self:EncounterRegister("UlatekInterruptBossCounts", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_STOP"}, true, {"boss2", "boss3", "boss4", "boss5"})
+        self:EncounterRegister("UlatekInterruptFocus", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED"}, true, "focus")
+        self:EncounterRegister("UlatekInterruptBossCounts", "UNIT_SPELLCAST_INTERRUPTED", true, {"boss2", "boss3", "boss4", "boss5"})
         self:EncounterFunction("UlatekInterruptFocus", function(_, event, unit)
             if not self.UlatekInterruptTrackingEnabled then return end
             if event == "PLAYER_FOCUS_CHANGED" then
@@ -1074,15 +1074,12 @@ NSI.EncounterAlertStart[encID] = function(self, id, isPreview)
                 end
             elseif event == "UNIT_SPELLCAST_INTERRUPTED" and unit == "focus" and self.UlatekInterruptFocusedBossUnit then
                 self:OnInterrupt(true)
-                self:UpdateUlatekInterruptDisplay()
-            elseif event == "UNIT_SPELLCAST_STOP" and unit == "focus" and self.UlatekInterruptFocusedBossUnit then
-                self:OnCastStop(false)
                 self.UlatekInterruptBossCounts[self.UlatekInterruptFocusedBossUnit] = self.Interrupts.castCount
                 self:UpdateUlatekInterruptDisplay()
             end
         end)
         self:EncounterFunction("UlatekInterruptBossCounts", function(_, event, unit)
-            if not self.UlatekInterruptTrackingEnabled or event ~= "UNIT_SPELLCAST_STOP" or unit == self.UlatekInterruptFocusedBossUnit then return end
+            if not self.UlatekInterruptTrackingEnabled or unit == self.UlatekInterruptFocusedBossUnit then return end
             local castCount = self.UlatekInterruptBossCounts[unit] + 1
             if castCount > self.Interrupts.max then
                 castCount = 1
@@ -1100,8 +1097,8 @@ NSI.EncounterAlertStart[encID] = function(self, id, isPreview)
         self:UpdateUlatekInterruptDisplay()
     else
         self:EncounterRegister("UlatekInterruptFocus", "PLAYER_FOCUS_CHANGED", false)
-        self:EncounterRegister("UlatekInterruptFocus", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_STOP"}, false)
-        self:EncounterRegister("UlatekInterruptBossCounts", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_STOP"}, false)
+        self:EncounterRegister("UlatekInterruptFocus", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED"}, false)
+        self:EncounterRegister("UlatekInterruptBossCounts", "UNIT_SPELLCAST_INTERRUPTED", false)
         HideUlatekInterruptDisplay(self)
     end
 
@@ -1195,8 +1192,8 @@ NSI.EncounterAlertStop[encID] = function(self)
         self.UlatekInterruptResetTimer = nil
     end
     self:EncounterRegister("UlatekInterruptFocus", "PLAYER_FOCUS_CHANGED", false)
-    self:EncounterRegister("UlatekInterruptFocus", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_STOP"}, false)
-    self:EncounterRegister("UlatekInterruptBossCounts", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_STOP"}, false)
+    self:EncounterRegister("UlatekInterruptFocus", {"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_INTERRUPTED"}, false)
+    self:EncounterRegister("UlatekInterruptBossCounts", "UNIT_SPELLCAST_INTERRUPTED", false)
     if self.Interrupts then
         self:ResetInterrupts()
     end
